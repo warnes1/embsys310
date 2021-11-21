@@ -1,4 +1,20 @@
 
+//=====================================================================
+//
+// Class:      embsys310, Fall 2021
+// Assignment: assignment04
+//
+// Student:    Marion 'Scott' Warner
+//
+// Problem:    4. Bonus: Using the power of pointers and type casting,
+//                create a function that can determine if a computer
+//                is big-endian -or- little-endian
+//                
+//                Test your function in the simulator by modifying
+//                the Project Options to:
+//                   a. Cortex M4 (Little Endian option)
+//                   b. Cortex M4 (Big Endian option)
+//=====================================================================
 
 
 // Use pointers and type cast to determine if machine is
