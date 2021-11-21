@@ -1,13 +1,14 @@
 
-Student: Marion 'Scott' Warner
-
 EMBSYS 310  - AU21 
-ASSIGNMENT 04 
+ASSIGNMENT 04
+
+Student: Marion 'Scott' Warner
 
 Problems:
  
 1. Follow the same steps as we did in the class to blink LED1 (PA5) at a visible rate using the bit-
-   band region to enable the clock for Port A, then answer the following: 
+   band region to enable the clock for Port A, then answer the following:
+ 
        a. What instructions does the compiler produce in assembly for “writing” to the 
           RCC_AHB2ENR bit when using bit-band address?
 
@@ -28,7 +29,8 @@ Problems:
               ; This requires 3 operations to change the single bit we wish to change.
 
 2. Create a function “func1” with 5 arguments and call “func1” from within another function 
-   “func2”. Trace thru the assembler and note: 
+   “func2”. Trace thru the assembler and note:
+ 
        a. How does the calling function “func2” pass the values to the called function “func1”?
 
               Values are passed using the registers and the Stack.
@@ -67,8 +69,10 @@ Problems:
        See main.c for func1() & func2(), in folder: assignment04\pass-values
  
 3. Following the queue data structure approach, design, implement and test a stack data 
-   structure: 
-        a. The following is the list of requirements: 
+   structure:
+ 
+        a. The following is the list of requirements:
+ 
             i. The stack should have a predefined size
                     DONE 
             ii. The stack supports “int” data types.
@@ -97,10 +101,12 @@ Problems:
 4. Bonus: Using the power of pointers and type casting, create a function that can determine if a 
    computer is big-endian or little-endian. Test your function in the simulator and modify the 
    Project Options (as shown in the figure below) against: 
-       a. Cortex M4 (Little endian option) 
-       b. Cortex M4 (Big Endian option)
+       
+        a. Cortex M4 (Little endian option)
+ 
+        b. Cortex M4 (Big Endian option)
 
-                    See main.c in folder: assignment04\which-endian 
+   See main.c in folder: assignment04\which-endian 
  
 What to turn in and how: 
 - Check in all your homework in your repo under the folder “assignment04”. 
