@@ -1,0 +1,214 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  04/Dec/2021  21:42:51
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        C:\UW_Workspace\warnes1\embsys310\assignment07\Blinking_LED_CMSIS_SYSTICK\Debug\Exe\Blinking_LED_CMSIS_SYSTICK.out
+#    Map file     =
+#        C:\UW_Workspace\warnes1\embsys310\assignment07\Blinking_LED_CMSIS_SYSTICK\Debug\List\Blinking_LED_CMSIS_SYSTICK.map
+#    Command line =
+#        -f C:\Users\warne\AppData\Local\Temp\EW621B.tmp
+#        (C:\UW_Workspace\warnes1\embsys310\assignment07\Blinking_LED_CMSIS_SYSTICK\Debug\Obj\delay.o
+#        C:\UW_Workspace\warnes1\embsys310\assignment07\Blinking_LED_CMSIS_SYSTICK\Debug\Obj\main.o
+#        C:\UW_Workspace\warnes1\embsys310\assignment07\Blinking_LED_CMSIS_SYSTICK\Debug\Obj\vector_table_stm32l475xx.o
+#        --no_out_extension -o
+#        C:\UW_Workspace\warnes1\embsys310\assignment07\Blinking_LED_CMSIS_SYSTICK\Debug\Exe\Blinking_LED_CMSIS_SYSTICK.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        C:\UW_Workspace\warnes1\embsys310\assignment07\Blinking_LED_CMSIS_SYSTICK\Debug\List\Blinking_LED_CMSIS_SYSTICK.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.3\arm\config\linker\ST\stm32l475xG.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x0] |
+                [from 0x800'0000 to 0x80f'ffff] { ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P3":  place in [from 0x2000'0000 to 0x2001'7fff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+initialize by copy { rw };
+
+No sections matched the following patterns:
+
+  ro section application_specific_ro  in "P2|P5"
+  rw section application_specific_rw  in "P2|P5"
+  section .textrw                     in "P4"
+
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0x40
+  .intvec            const     0x800'0000    0x40  vector_table_stm32l475xx.o [1]
+                             - 0x800'0040    0x40
+
+"P1":                                       0x190
+  .text              ro code   0x800'0040    0x68  main.o [1]
+  .text              ro code   0x800'00a8    0x20  delay.o [1]
+  .text              ro code   0x800'00c8    0x2e  copy_init3.o [3]
+  .text              ro code   0x800'00f8    0x28  data_init.o [3]
+  .iar.init_table    const     0x800'0120    0x14  - Linker created -
+  .text              ro code   0x800'0134    0x1e  cmain.o [3]
+  .text              ro code   0x800'0152     0x4  low_level_init.o [2]
+  .text              ro code   0x800'0156     0x4  exit.o [2]
+  .text              ro code   0x800'015c     0xa  cexit.o [3]
+  .text              ro code   0x800'0168    0x14  exit.o [4]
+  .text              ro code   0x800'017c     0xc  cstartup_M.o [3]
+  .text              ro code   0x800'0188     0xa  vector_table_stm32l475xx.o [1]
+  .text              ro code   0x800'0192     0x8  vector_table_stm32l475xx.o [1]
+  .text              ro code   0x800'019a     0x8  vector_table_stm32l475xx.o [1]
+  .text              ro code   0x800'01a2     0x8  vector_table_stm32l475xx.o [1]
+  .text              ro code   0x800'01aa     0x8  vector_table_stm32l475xx.o [1]
+  .text              ro code   0x800'01b2     0x8  vector_table_stm32l475xx.o [1]
+  .text              ro code   0x800'01ba     0x8  vector_table_stm32l475xx.o [1]
+  .text              ro code   0x800'01c2     0x8  vector_table_stm32l475xx.o [1]
+  .rodata            const     0x800'01ca     0x0  copy_init3.o [3]
+  Initializer bytes  const     0x800'01cc     0x4  <for P3 s0>
+                             - 0x800'01d0   0x190
+
+"P3", part 1 of 2:                            0x4
+  P3 s0                       0x2000'0000     0x4  <Init block>
+    .data            inited   0x2000'0000     0x4  main.o [1]
+                            - 0x2000'0004     0x4
+
+"P3", part 2 of 2:                         0x2000
+  CSTACK                      0x2000'0008  0x2000  <Block>
+    CSTACK           uninit   0x2000'0008  0x2000  <Block tail>
+                            - 0x2000'2008  0x2000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+          0x0          0x0       0x1
+   0x800'01d0   0x80f'ffff  0xf'fe30
+  0x2000'0004  0x2000'0007       0x4
+  0x2000'2008  0x2001'7fff  0x1'5ff8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4:
+           0x800'01cc   0x4
+    1 destination range, total size 0x4:
+          0x2000'0000   0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                      ro code  ro data  rw data
+    ------                      -------  -------  -------
+command line/config:
+    -----------------------------------------------------
+    Total:
+
+C:\UW_Workspace\warnes1\embsys310\assignment07\Blinking_LED_CMSIS_SYSTICK\Debug\Obj: [1]
+    delay.o                          32
+    main.o                          104        4        4
+    vector_table_stm32l475xx.o       66       64
+    -----------------------------------------------------
+    Total:                          202       68        4
+
+dl7M_tln.a: [2]
+    exit.o                            4
+    low_level_init.o                  4
+    -----------------------------------------------------
+    Total:                            8
+
+rt7M_tl.a: [3]
+    cexit.o                          10
+    cmain.o                          30
+    copy_init3.o                     46
+    cstartup_M.o                     12
+    data_init.o                      40
+    -----------------------------------------------------
+    Total:                          138
+
+shb_l.a: [4]
+    exit.o                           20
+    -----------------------------------------------------
+    Total:                           20
+
+    Gaps                              6
+    Linker created                            22    8'192
+---------------------------------------------------------
+    Grand Total:                    374       90    8'196
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base    0x800'0120         --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'0134         --   Gb  - Linker created -
+?main                    0x800'0135        Code  Gb  cmain.o [3]
+CSTACK$$Base            0x2000'0008         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'2008         --   Gb  - Linker created -
+ClockCyclesToLoad       0x2000'0000   0x4  Data  Gb  main.o [1]
+Handler_NotUsed          0x800'0189   0x2  Code  Gb  vector_table_stm32l475xx.o [1]
+Region$$Table$$Base      0x800'0120         --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'0134         --   Gb  - Linker created -
+SysTick_Handler          0x800'0059   0xc  Code  Gb  main.o [1]
+SysTick_Init             0x800'0041  0x18  Code  Gb  main.o [1]
+__cmain                  0x800'0135        Code  Gb  cmain.o [3]
+__exit                   0x800'0169  0x14  Code  Gb  exit.o [4]
+__iar_copy_init3         0x800'00c9  0x2e  Code  Gb  copy_init3.o [3]
+__iar_data_init3         0x800'00f9  0x28  Code  Gb  data_init.o [3]
+__iar_program_start      0x800'017d        Code  Gb  cstartup_M.o [3]
+__low_level_init         0x800'0153   0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000  0x40  Data  Gb  vector_table_stm32l475xx.o [1]
+_call_main               0x800'0141        Code  Gb  cmain.o [3]
+_exit                    0x800'015d        Code  Gb  cexit.o [3]
+_main                    0x800'014f        Code  Gb  cmain.o [3]
+delay                    0x800'00a9  0x20  Code  Gb  delay.o [1]
+exit                     0x800'0157   0x4  Code  Gb  exit.o [2]
+main                     0x800'0065  0x2c  Code  Gb  main.o [1]
+
+
+[1] = C:\UW_Workspace\warnes1\embsys310\assignment07\Blinking_LED_CMSIS_SYSTICK\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+    374 bytes of readonly  code memory
+     90 bytes of readonly  data memory
+  8'196 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
